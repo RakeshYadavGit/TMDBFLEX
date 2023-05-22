@@ -1,0 +1,17 @@
+pluginManagement {
+    repositories {
+        google()
+        gradlePluginPortal()
+        jcenter()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        jcenter()
+    }
+}
+rootProject.name = "TMDBFLEXAPP_"
+include ':app'

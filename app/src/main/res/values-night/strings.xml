@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="movie_tv_show_or_person">Movie, Tv Show or Person</string>
+    <string name="back_button">Back Button</string>
+</resources>
