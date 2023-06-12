@@ -28,10 +28,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <ss.com.bannerslider.Slider
-                    app:slider_loopSlides="true"
-                    app:slider_indicatorSize="0dp"
-                    android:id="@+id/slider"
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPagerDetails"
                     android:layout_width="match_parent"
                     android:layout_height="200dp" />
                 <FrameLayout

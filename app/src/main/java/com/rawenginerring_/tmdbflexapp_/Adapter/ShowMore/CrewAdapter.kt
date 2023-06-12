@@ -30,6 +30,6 @@ class CrewAdapter(private val crewList: Credits) : RecyclerView.Adapter<CrewAdap
         holder.bind(crew)
     }
 
-    override fun getItemCount() = if (crewList.crew.size > 0) 6 else 0
+    override fun getItemCount() = if (crewList.crew.size < 6) crewList.crew.size else 6
 
 }

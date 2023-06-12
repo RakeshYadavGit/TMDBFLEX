@@ -1,6 +1,6 @@
 package com.rawenginerring_.tmdbflexapp_.DataFactory
 
-import com.cronocode.moviecatalog.services.MovieApiInterface
+import com.rawenginerring_.tmdbflexapp_.services.MovieApiInterface
 import com.cronocode.moviecatalog.services.MovieApiService
 import com.rawenginerring_.tmdbflexapp_.models.*
 import retrofit2.Call

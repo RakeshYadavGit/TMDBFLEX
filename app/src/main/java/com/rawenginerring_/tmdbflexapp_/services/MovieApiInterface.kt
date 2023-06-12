@@ -1,4 +1,4 @@
-package com.cronocode.moviecatalog.services
+package com.rawenginerring_.tmdbflexapp_.services
 
 import com.rawenginerring_.tmdbflexapp_.models.MovieDetailsResponse
 import com.rawenginerring_.tmdbflexapp_.models.MovieResponse

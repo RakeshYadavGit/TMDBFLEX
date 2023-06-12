@@ -1,6 +1,7 @@
 package com.rawenginerring_.tmdbflexapp_.fragments
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -25,7 +26,6 @@ class HomeFragment : Fragment() {
     private lateinit var popularTVShowAdapter: PopularTVShowAdapter
     private lateinit var topRatedMoviesAdapter: TopRatedMoviesAdapter
     private lateinit var topRatedTVShowAdapter: TopRatedTVShowAdapter
-    private lateinit var silder: UpcomingMovieSliderAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -45,10 +45,18 @@ class HomeFragment : Fragment() {
         getLatestMovieChildren { children ->
             trendingMovieAdapter = TrendingMovieAdapter(children)
             mBinding?.trendingMovies?.adapter = trendingMovieAdapter
-            mBinding?.slider?.setInterval(3000)
-            val adapter = UpcomingMovieSliderAdapter(children)
-            mBinding?.slider?.setAdapter(adapter)
+            mBinding?.viewPager?.adapter = ImagePagerAdapter(children)
             mBinding?.loader?.visibility = View.GONE
+            val delayMs: Long = 3000
+            val handler = Handler()
+            val runnable = object : Runnable {
+                override fun run() {
+                    val nextItem = mBinding?.viewPager?.currentItem?.plus(1)
+                    nextItem?.let { mBinding?.viewPager?.setCurrentItem(it, true) }
+                    handler.postDelayed(this, delayMs)
+                }
+            }
+            handler.postDelayed(runnable, delayMs)
         }
 
         getTopRatedChildren { children ->
@@ -77,8 +85,6 @@ class HomeFragment : Fragment() {
         }
         setupClickListeners()
     }
-
-
     override fun onDestroyView() {
         super.onDestroyView()
         mBinding = null

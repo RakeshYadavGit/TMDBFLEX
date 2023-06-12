@@ -15,6 +15,7 @@ class UpcomingMovieSliderAdapter(private val movies: List<MovieModel>) : SliderA
         Glide.with(viewHolder.itemView)
             .load(IMAGE_BASE + movie.poster)
             .into(viewHolder.imageView)
+
     }
 
 }

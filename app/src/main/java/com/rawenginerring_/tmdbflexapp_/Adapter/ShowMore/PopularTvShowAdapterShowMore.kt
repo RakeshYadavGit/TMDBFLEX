@@ -19,14 +19,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 class PopularTvShowAdapterShowMore(private val children : List<TVShowModel>): RecyclerView.Adapter<PopularTvShowAdapterShowMore.ViewHolder>() {
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = SmallItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
-
     }
-
     override fun getItemCount(): Int {
         return children.size
     }

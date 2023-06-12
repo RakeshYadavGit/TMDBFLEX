@@ -4,6 +4,7 @@ import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
+import com.rawenginerring_.tmdbflexapp_.Adapter.ImagePagerAdapter
 import com.rawenginerring_.tmdbflexapp_.Adapter.ShowMore.SelectedMovieSliderAdapter
 import com.rawenginerring_.tmdbflexapp_.Adapter.ViewPagerAdapter
 import com.rawenginerring_.tmdbflexapp_.Data.MovieDetails_
@@ -30,9 +31,8 @@ class DetailsActivity : AppCompatActivity() {
         val isTvShow = intent.getStringExtra("TV")
         bundle.putString("TV",isTvShow)
 
-        mBinding?.slider?.setInterval(3000)
-        val adapter = SelectedMovieSliderAdapter(MovieDetails_.movieInformation)
-        mBinding.slider.setAdapter(adapter)
+        mBinding?.viewPagerDetails?.adapter = SelectedMovieSliderAdapter(MovieDetails_.movieInformation)
+
         if(isTvShow=="TV"){
             mBinding.sliderText.text = MovieDetails_.movieInformation.name_
         }
